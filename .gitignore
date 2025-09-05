@@ -1,0 +1,68 @@
+# Python cache / build
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments (added explicit root path for large local env)
+/.venv/
+.venv/
+venv/
+.env/
+.env.local
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Logs / debug
+*.log
+logs/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local data / secrets
+.env*
+!env.example
+secrets.*
+
+# Audio/temp artifacts
+*.wav
+*.mp3
+*.flac
+/tmp/
+
+# Model / large files
+*.pt
+*.bin
+*.ckpt
+
+# Cache dirs
+.cache/
+.huggingface/
+
+data/
+!data/README.md
+
+# AWS credentials (just in case)
+.aws/
+
+# Pytest / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Misc
+*.bak
+*.tmp
