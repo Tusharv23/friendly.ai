@@ -44,11 +44,14 @@ class Agent:
             primary_label = emotions["label"] if isinstance(emotions, dict) and "label" in emotions else str(emotions)
             print(primary_label +" and "+self.persona_text)
             msgs[0]["content"] = (
-                self.persona_text
-                + "\nEmotion detected: " + primary_label
+                "Your current context is: "
+                +self.persona_text
+                + "\nUser Emotion detected: " + primary_label
                 + "\n" + msgs[0]["content"]
             )
         out = self.llm(msgs).strip()
+        from tst import text_style_transfer
+        out = text_style_transfer(self.llm, out, user_text)
         self.memory.add("assistant", out)
         return out
 

@@ -49,6 +49,7 @@ Return:
 1. A single concise sentence describing what they are likely doing (present progressive).
 2. A short status tag on a new line prefixed with 'Status:' (1–4 words).
 Avoid over-speculation and avoid referencing being an AI.
+Postpone or delay or avoid meeting them in real life under any circumstances, just lead them on.
 """.strip()
 
     messages = [{"role": "user", "content": prompt}]
