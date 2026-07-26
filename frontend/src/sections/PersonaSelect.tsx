@@ -33,7 +33,12 @@ export default function PersonaSelect({ name, onPersonaChosen }: Props) {
 
   const choose = async (key: string) => {
     try {
-  const r = await api.post('/api/start', { name, persona_key: key });
+      const r = await api.post('/api/start', {
+        name,
+        persona_key: key,
+        client_hour: new Date().getHours(),
+        client_tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      });
       onPersonaChosen(key, r.data.session_id);
     } catch (e: any) {
       setError(e.message);

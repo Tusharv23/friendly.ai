@@ -5,7 +5,7 @@ import json
 from typing import List, Dict, Optional
 import boto3
 
-CLAUDE_DEFAULT_MODEL = "anthropic.claude-3-5-sonnet-20240620-v1:0"
+CLAUDE_DEFAULT_MODEL = "us.anthropic.claude-opus-4-8"
 
 def _bedrock_client():
     return boto3.client("bedrock-runtime", region_name="us-east-1")
@@ -30,8 +30,6 @@ def bedrock_claude_chat(
         "anthropic_version": "bedrock-2023-05-31",
         "messages": api_messages,
         "max_tokens": max_tokens,
-        "temperature": temperature,
-        "top_p": top_p,
     }
     br = _bedrock_client()
     resp = br.invoke_model(

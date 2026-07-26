@@ -7,11 +7,7 @@ import ssl
 from pinecone import Pinecone, ServerlessSpec
 from sentence_transformers import SentenceTransformer
 
-# Fix SSL certificate issues
-ssl._create_default_https_context = ssl._create_unverified_context
-
 try:
-    # 1. Initialize Pinecone (use environment variable for security)
     api_key = os.getenv('PINECONE_API_KEY', 'pcsk_4KJv86_LT3pavBgdyHiANiuynDZLY2bdim37dxrm5Bq13fVSdnAdYyecbUKxuiVpXBvep5')
     pc = Pinecone(api_key=api_key)
 
